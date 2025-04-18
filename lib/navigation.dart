@@ -122,14 +122,17 @@ class _ManualNavigationState extends State<ManualNavigation> {
                       ),
                     ),
                     Positioned(
-                      left: MediaQuery.of(context).size.width / 3.8,
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(100),
-                        onTap: () => _onItemTapped(1),
-                        child: Container(
-                          height: 90,
-                          width: 90,
-                          decoration: BoxDecoration(
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                        child: InkWell(
+                          borderRadius: BorderRadius.circular(100),
+                          onTap: () => _onItemTapped(1),
+                          child: Container(
+                            height: 90,
+                            width: 90,
+                            decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100),
                               color: _selectedIndex == 1
                                   ? Colors.transparent
@@ -141,16 +144,9 @@ class _ManualNavigationState extends State<ManualNavigation> {
                                   : const DecorationImage(
                                       image: AssetImage(
                                           "assets/icons/home_btn.png")),
-                              border:
-                                  Border.all(color: Colors.black, width: 4)),
-                          child: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 2,
-                              ),
-                            ],
+                              border: Border.all(color: Colors.black, width: 4),
+                            ),
+                            child: const SizedBox(height: 2),
                           ),
                         ),
                       ),
